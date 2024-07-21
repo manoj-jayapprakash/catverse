@@ -3,19 +3,19 @@
 ## Project Setup
 
 - [x] Initialize T3 app (Next.js, TypeScript, Tailwind CSS, shadcn UI)
-- [ ] Set up Vercel Postgres database
-- [ ] Configure Drizzle ORM
-  - [ ] Install Drizzle dependencies
-  - [ ] Set up Drizzle configuration file
-  - [ ] Create database connection utility
+- [x] Set up Vercel Postgres database
+- [x] Configure Drizzle ORM
+  - [x] Install Drizzle dependencies
+  - [x] Set up Drizzle configuration file
+  - [x] Create database connection utility
 
 ## Authentication System (Lucia Auth)
 
-- [ ] Install and configure Lucia Auth
-- [ ] Implement user schema in Drizzle
-  - [ ] Define user table structure
-  - [ ] Create migration for user table
-- [ ] Set up authentication API routes
+- [x] Install and configure Lucia Auth
+- [x] Implement user schema in Drizzle
+  - [x] Define user table structure
+  - [x] Create migration for user table
+- [x] Set up authentication API routes
   - [ ] Implement sign-up route
   - [ ] Implement login route
   - [ ] Implement logout route

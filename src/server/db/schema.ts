@@ -8,6 +8,8 @@ import {
   serial,
   timestamp,
   varchar,
+  boolean,
+  text,
 } from "drizzle-orm/pg-core";
 
 /**
@@ -27,10 +29,46 @@ export const posts = createTable(
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
-      () => new Date()
+      () => new Date(),
     ),
   },
   (example) => ({
     nameIndex: index("name_idx").on(example.name),
-  })
+  }),
+);
+
+export const users = createTable("user", {
+  id: varchar("id").primaryKey().notNull().unique(),
+  username: varchar("username", { length: 50 }).notNull().unique(),
+  email: varchar("email", { length: 255 }).notNull().unique(),
+  passwordHash: varchar("password_hash", { length: 255 }).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+
+  // Profile information
+  displayName: varchar("display_name", { length: 100 }),
+  bio: text("bio"),
+  avatarUrl: varchar("avatar_url", { length: 255 }),
+  lastLogin: timestamp("last_login"),
+  // Optional: for email verification
+  isVerified: boolean("is_verified").default(false),
+  verificationToken: varchar("verification_token", { length: 255 }),
+});
+export type User = typeof users.$inferSelect;
+
+export const sessions = createTable(
+  "session",
+  {
+    id: varchar("id").primaryKey().notNull().unique(),
+    userId: varchar("user_id")
+      .notNull()
+      .references(() => users.id),
+    expiresAt: timestamp("expires_at", {
+      withTimezone: true,
+      mode: "date",
+    }).notNull(),
+  },
+  (t) => ({
+    userIdx: index("session_user_idx").on(t.userId),
+  }),
 );

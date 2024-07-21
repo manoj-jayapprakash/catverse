@@ -1,29 +1,103 @@
-# Create T3 App
+# High Priority To-Do List
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Project Setup
 
-## What's next? How do I make an app with this?
+- [x] Initialize T3 app (Next.js, TypeScript, Tailwind CSS, shadcn UI)
+- [ ] Set up Vercel Postgres database
+- [ ] Configure Drizzle ORM
+  - [ ] Install Drizzle dependencies
+  - [ ] Set up Drizzle configuration file
+  - [ ] Create database connection utility
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Authentication System (Lucia Auth)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- [ ] Install and configure Lucia Auth
+- [ ] Implement user schema in Drizzle
+  - [ ] Define user table structure
+  - [ ] Create migration for user table
+- [ ] Set up authentication API routes
+  - [ ] Implement sign-up route
+  - [ ] Implement login route
+  - [ ] Implement logout route
+- [ ] Create authentication hooks and context
+- [ ] Develop sign-up page
+  - [ ] Design sign-up form
+  - [ ] Implement form validation
+  - [ ] Connect form to sign-up API
+- [ ] Develop login page
+  - [ ] Design login form
+  - [ ] Implement form validation
+  - [ ] Connect form to login API
+- [ ] Implement protected routes logic
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## User Profile
 
-## Learn More
+- [ ] Define user profile schema in Drizzle
+  - [ ] Add fields for bio, avatar URL, etc.
+  - [ ] Create migration for profile table
+- [ ] Implement API route for fetching user profile
+- [ ] Implement API route for updating user profile
+- [ ] Create user profile page
+  - [ ] Design profile layout
+  - [ ] Implement profile data fetching
+  - [ ] Create edit profile functionality
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## Post Functionality
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- [ ] Define post schema in Drizzle
+  - [ ] Include fields for content, image URLs, author, timestamp
+  - [ ] Create migration for post table
+- [ ] Set up file upload functionality
+  - [ ] Choose and configure file storage solution (e.g., Vercel Blob Store)
+  - [ ] Implement file upload API route
+- [ ] Implement post creation API route
+- [ ] Implement post retrieval API route
+- [ ] Create post creation component
+  - [ ] Design post creation form
+  - [ ] Implement image upload in the form
+  - [ ] Add form validation
+  - [ ] Connect form to post creation API
+- [ ] Develop post display component
+  - [ ] Design individual post layout
+  - [ ] Implement lazy loading for post images
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Main Feed
 
-## How do I deploy this?
+- [ ] Implement feed API route
+  - [ ] Create query for fetching recent posts
+  - [ ] Implement pagination or infinite scroll logic
+- [ ] Develop main feed page
+  - [ ] Design feed layout
+  - [ ] Implement post loading and display
+  - [ ] Add infinite scroll or pagination UI
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Post Interactions
+
+- [ ] Define like schema in Drizzle
+  - [ ] Create migration for likes table
+- [ ] Implement like/unlike API route
+- [ ] Add like functionality to post component
+  - [ ] Design like button UI
+  - [ ] Implement optimistic updates for likes
+
+## Responsive Design
+
+- [ ] Set up Tailwind CSS breakpoints
+- [ ] Implement responsive navbar
+- [ ] Ensure responsive layout for main feed
+- [ ] Make post creation form responsive
+- [ ] Ensure user profile page is mobile-friendly
+
+## Error Handling and Validation
+
+- [ ] Implement global error handling
+- [ ] Add input validation to all forms
+- [ ] Create error boundary components
+- [ ] Implement proper error responses in API routes
+
+## Initial Testing
+
+- [ ] Set up testing environment (e.g., Jest, React Testing Library)
+- [ ] Write unit tests for authentication functions
+- [ ] Create integration tests for post creation and retrieval
+- [ ] Perform manual testing of core user flows

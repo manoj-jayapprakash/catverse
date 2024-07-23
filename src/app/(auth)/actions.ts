@@ -101,6 +101,8 @@ export const login = async (
     );
     return redirect("/");
   } catch (err) {
+    if (isRedirectError(err)) throw err;
+
     return { error: "Something went wrong. Please try again later." };
   }
 };

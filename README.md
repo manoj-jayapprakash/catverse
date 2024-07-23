@@ -16,25 +16,24 @@
   - [x] Define user table structure
   - [x] Create migration for user table
 - [x] Set up authentication API routes
-  - [ ] Implement sign-up route
-  - [ ] Implement login route
-  - [ ] Implement logout route
-- [ ] Create authentication hooks and context
-- [ ] Develop sign-up page
-  - [ ] Design sign-up form
-  - [ ] Implement form validation
-  - [ ] Connect form to sign-up API
-- [ ] Develop login page
-  - [ ] Design login form
-  - [ ] Implement form validation
-  - [ ] Connect form to login API
+  - [x] Implement sign-up route
+  - [x] Implement login route
+  - [x] Implement logout route
+- [x] Create authentication hooks and context
+- [x] Develop sign-up page
+  - [x] Design sign-up form
+  - [x] Implement form validation
+  - [x] Connect form to sign-up API
+- [x] Develop login page
+  - [x] Design login form
+  - [x] Implement form validation
+  - [x] Connect form to login API
 - [ ] Implement protected routes logic
 
 ## User Profile
 
-- [ ] Define user profile schema in Drizzle
-  - [ ] Add fields for bio, avatar URL, etc.
-  - [ ] Create migration for profile table
+- [x] Define user profile schema in Drizzle
+  - [x] Add fields for bio, avatar URL, etc.
 - [ ] Implement API route for fetching user profile
 - [ ] Implement API route for updating user profile
 - [ ] Create user profile page

@@ -55,10 +55,6 @@ export const LoginForm = () => {
               <FormControl>
                 <Input {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name. You can change it after
-                registeration.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

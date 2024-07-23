@@ -1,10 +1,10 @@
 import { cache } from "react";
 import { cookies } from "next/headers";
-import type { Session, User } from "lucia";
 import { lucia } from "@/lib/auth";
+import { type TSession } from "@/schema/auth";
 
 export const uncachedValidateRequest = async (): Promise<
-  { user: User; session: Session } | { user: null; session: null }
+  TSession | { user: null; session: null }
 > => {
   const sessionId = cookies().get(lucia.sessionCookieName)?.value ?? null;
   if (!sessionId) {

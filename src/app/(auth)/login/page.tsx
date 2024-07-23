@@ -3,23 +3,23 @@ import Link from "next/link";
 import { LoginForm } from "./login-form";
 import { type Metadata } from "next";
 
-export const metadata:Metadata = {
-  title: 'Login'
-}
+export const metadata: Metadata = {
+  title: "Login",
+};
 
 export default function Login() {
   return (
     <main className="flex h-screen items-center justify-center">
-      <div className="grid max-h-[44rem] bg-card overflow-hidden md:rounded-lg md:p-4 md:shadow-md lg:grid-cols-2 lg:p-0">
-        {/* <Image
-          src="/images/auth/register.webp"
+      <div className="m-4 flex h-full max-h-[40rem] w-full max-w-[64rem] overflow-hidden rounded-2xl bg-card shadow-2xl">
+        <Image
+          src="/images/auth/signin.webp"
           alt="Image"
           width={520}
           height={600}
-          className="hidden lg:block"
-        /> */}
-        <div className="flex items-center justify-center py-6">
-          <div className="mx-auto grid w-[350px] gap-6">
+          className="hidden w-1/2 md:block"
+        />
+        <div className="flex flex-grow items-center justify-center p-6">
+          <div className="mx-auto grid gap-6">
             <div className="grid gap-2 text-center">
               <h1 className="text-3xl font-bold">Login</h1>
               <p className="text-balance text-muted-foreground">

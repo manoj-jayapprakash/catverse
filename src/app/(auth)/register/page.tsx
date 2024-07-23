@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 export default function Register() {
   return (
     <main className="flex h-screen items-center justify-center">
-      <div className="grid max-h-[44rem] overflow-hidden bg-card md:rounded-lg md:p-4 md:shadow-2xl lg:grid-cols-2 lg:p-0">
-        <div className="flex items-center justify-center bg-card py-6 lg:p-0">
-          <div className="mx-auto grid w-[350px] gap-6 lg:h-fit">
+      <div className="m-4 flex h-full max-h-[40rem] w-full max-w-[64rem] overflow-hidden rounded-2xl bg-card shadow-2xl">
+        <div className="flex flex-grow items-center justify-center bg-card p-6 lg:p-0">
+          <div className="mx-auto grid gap-6 lg:h-fit">
             <div className="grid gap-2 text-center">
               <h1 className="text-3xl font-bold">Sign Up</h1>
               <p className="text-balance text-muted-foreground">
@@ -28,13 +28,13 @@ export default function Register() {
             </div>
           </div>
         </div>
-        {/* <Image
+        <Image
           src="/images/auth/register.webp"
           alt="Image"
           width={520}
           height={600}
-          className="hidden object-contain lg:block"
-        /> */}
+          className="hidden w-1/2 object-cover md:block"
+        />
       </div>
     </main>
   );

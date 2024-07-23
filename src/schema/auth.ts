@@ -1,3 +1,4 @@
+import type { Session, User } from "lucia";
 import { z } from "zod";
 
 const requiredString = z.string().trim().min(1, "Required");
@@ -19,3 +20,8 @@ export const LoginFormSchema = z.object({
 });
 
 export type TLoginForm = z.infer<typeof LoginFormSchema>;
+
+export type TSession = {
+  user: User;
+  session: Session;
+};

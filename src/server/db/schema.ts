@@ -24,7 +24,10 @@ export const posts = createTable(
   "post",
   {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }),
+    content: varchar("content"),
+    userId: varchar("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
@@ -32,9 +35,9 @@ export const posts = createTable(
       () => new Date(),
     ),
   },
-  (example) => ({
-    nameIndex: index("name_idx").on(example.name),
-  }),
+  // (example) => ({
+  //   nameIndex: index("name_idx").on(example.name),
+  // }),
 );
 
 export const users = createTable("user", {
@@ -54,6 +57,7 @@ export const users = createTable("user", {
   isVerified: boolean("is_verified").default(false),
   verificationToken: varchar("verification_token", { length: 255 }),
 });
+
 export type User = typeof users.$inferSelect;
 
 export const sessions = createTable(
@@ -62,7 +66,7 @@ export const sessions = createTable(
     id: varchar("id").primaryKey().notNull().unique(),
     userId: varchar("user_id")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, { onDelete: "cascade" }),
     expiresAt: timestamp("expires_at", {
       withTimezone: true,
       mode: "date",

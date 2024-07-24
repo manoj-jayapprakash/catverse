@@ -25,3 +25,6 @@ export type TSession = {
   user: User;
   session: Session;
 };
+
+export const CreatPostSchema = requiredString;
+export type TCreatePost = z.infer<typeof CreatPostSchema>;

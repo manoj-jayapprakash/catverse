@@ -13,23 +13,21 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { LogOut, Monitor, Moon, Sun, User } from "lucide-react";
 import { logout } from "@/app/(auth)/actions";
-import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+import { UserAvatar } from "./user-avatar";
 
-export const AvatarButton = ({ className }: { className?: string }) => {
+export const Profile = () => {
   const { user } = useSession();
   const { setTheme } = useTheme();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Avatar className={cn("cursor-pointer", className)}>
-          <AvatarImage src={user.avatarUrl ?? undefined} />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
+        <button className="rounded-full">
+          <UserAvatar avatarUrl={user.avatarUrl} />
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Logged in as: @{user.username}</DropdownMenuLabel>

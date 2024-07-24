@@ -14,7 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { type TRegisterForm, RegisterFormSchema } from "@/schema/auth";
+import { type TRegisterForm, RegisterFormSchema } from "@/lib/validations";
 import { PasswordInput } from "@/components/ui/password-input";
 import { useState, useTransition } from "react";
 import { register } from "../actions";

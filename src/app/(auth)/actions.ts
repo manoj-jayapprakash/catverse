@@ -6,7 +6,7 @@ import {
   LoginFormSchema,
   type TRegisterForm,
   RegisterFormSchema,
-} from "@/schema/auth";
+} from "@/lib/validations";
 import { hash, verify } from "@node-rs/argon2";
 import { generateIdFromEntropySize } from "lucia";
 import { users } from "@/server/db/schema";

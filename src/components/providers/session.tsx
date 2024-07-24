@@ -1,5 +1,5 @@
 "use client";
-import { type TSession } from "@/schema/auth";
+import { type TSession } from "@/lib/validations";
 import React, { createContext, useContext } from "react";
 
 const SessionContext = createContext<TSession | null>(null);

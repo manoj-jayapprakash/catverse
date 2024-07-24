@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AvatarButton } from "@/components/ui/avatar-button";
 import { Search } from "@/components/search";
+import { Profile } from "@/components/ui/avatar-button";
 
 export const Navbar = () => {
   return (
@@ -17,7 +17,7 @@ export const Navbar = () => {
           />
         </Link>
         <Search />
-        <AvatarButton />
+        <Profile />
       </div>
     </header>
   );

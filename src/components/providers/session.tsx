@@ -7,10 +7,7 @@ const SessionContext = createContext<TSession | null>(null);
 export const SessionProvider = ({
   children,
   value,
-}: {
-  children: React.ReactNode;
-  value: TSession;
-}) => {
+}: React.PropsWithChildren<{ value: TSession }>) => {
   return (
     <SessionContext.Provider value={value}>{children}</SessionContext.Provider>
   );

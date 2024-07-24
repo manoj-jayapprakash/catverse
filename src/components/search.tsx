@@ -18,7 +18,12 @@ export const Search = () => {
     router.push(`/search?q=${encodeURIComponent(query)}`);
   };
   return (
-    <form onSubmit={handleSubmit} method="GET" action="/search">
+    <form
+      onSubmit={handleSubmit}
+      method="GET"
+      action="/search"
+      className="ml-auto"
+    >
       <div className="relative">
         <Input name="search" placeholder="Search" className="w-72 pe-10" />
         <SearchIcon className="absolute right-3 top-1/2 size-5 -translate-y-1/2 transform text-muted-foreground" />

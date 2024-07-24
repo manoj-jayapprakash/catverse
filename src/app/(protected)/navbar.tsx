@@ -17,7 +17,7 @@ export const Navbar = () => {
           />
         </Link>
         <Search />
-        <AvatarButton className="ml-auto" />
+        <AvatarButton />
       </div>
     </header>
   );

@@ -6,8 +6,8 @@ import { Profile } from "@/components/ui/avatar-button";
 
 export const Navbar = () => {
   return (
-    <header className="sticky top-0 z-10 bg-card shadow-sm">
-      <div className="mx-auto flex flex-wrap items-center justify-center gap-5 px-5 py-3">
+    <header className="sticky top-0 z-10 bg-card shadow-sm md:h-16">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-5 px-5 py-3">
         <Link href={"/"}>
           <Image
             src="/images/logo.png"

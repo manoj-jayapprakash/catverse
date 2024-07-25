@@ -57,7 +57,7 @@
   - [ ] Add form validation
   - [ ] Connect form to post creation API
 - [ ] Develop post display component
-  - [ ] Design individual post layout
+  - [x] Design individual post layout
   - [ ] Implement lazy loading for post images
 
 ## Main Feed

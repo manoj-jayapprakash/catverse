@@ -40,10 +40,9 @@ export const PostEditor = () => {
         <UserAvatar avatarUrl={user.avatarUrl} className="hidden sm:inline" />
         <EditorContent
           editor={editor}
-          className="max-h-[20rem] w-full overflow-y-auto rounded-2xl bg-background p-1"
+          className="max-h-[20rem] w-full overflow-y-auto p-1"
         />
       </div>
-
       <Button
         onClick={onSubmit}
         disabled={!input.trim()}

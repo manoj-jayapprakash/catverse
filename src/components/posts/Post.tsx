@@ -10,6 +10,7 @@ import {
   ThumbsUp,
 } from "lucide-react";
 import { getDurationFromCurrentDate } from "@/lib/utils";
+import { PostMoreInteractions } from "./interactions";
 
 export const Post = ({ post }: { post: TPostWithUser }) => {
   const { content, createdAt, user } = post;
@@ -27,8 +28,8 @@ export const Post = ({ post }: { post: TPostWithUser }) => {
           </p>
         </div>
         <div className="ml-auto flex gap-2 text-muted-foreground">
-          <Bookmark className="size-4" />
-          <MoreVertical className="size-4" />
+          {/* <Bookmark className="size-4" /> */}
+          <PostMoreInteractions post={post} />
         </div>
       </header>
       <p>{content}</p>

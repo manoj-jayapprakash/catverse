@@ -2,11 +2,27 @@ import { posts, users } from "@/server/db/schema";
 import { createSelectSchema } from "drizzle-zod";
 import { z } from "zod";
 
-const selectPostSchema = createSelectSchema(posts);
-const selectUserSchema = createSelectSchema(users);
+const dateSchema = z
+  .string()
+  .or(z.date())
+  .transform((val) => new Date(val));
 
-export const postWithUserSchema = selectPostSchema.extend({
-  user: selectUserSchema.pick({
+const basePostSchema = createSelectSchema(posts);
+const baseUserSchema = createSelectSchema(users);
+
+const postSchema = basePostSchema.extend({
+  createdAt: dateSchema,
+  updatedAt: dateSchema,
+});
+
+const userSchema = baseUserSchema.extend({
+  createdAt: dateSchema,
+  updatedAt: dateSchema,
+  lastLogin: dateSchema.nullable(),
+});
+
+export const postWithUserSchema = postSchema.extend({
+  user: userSchema.pick({
     displayName: true,
     username: true,
     avatarUrl: true,
@@ -16,3 +32,8 @@ export const postWithUserSchema = selectPostSchema.extend({
 export const postsWithUserSchema = z.array(postWithUserSchema);
 
 export type TPostWithUser = z.infer<typeof postWithUserSchema>;
+
+export type TInfinitePostWithCursor = {
+  posts: TPostWithUser[];
+  nextCursor: number | null;
+};

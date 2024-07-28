@@ -3,14 +3,15 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
-import { createPost } from "../action";
 import { UserAvatar } from "@/components/ui/user-avatar";
 import { Button } from "@/components/ui/button";
 import { useSession } from "@/components/providers/session";
 import "./styles.css";
+import { useSubmitPostMutation } from "../queries";
 
 export const PostEditor = () => {
   const { user } = useSession();
+  const mutation = useSubmitPostMutation();
 
   const editor = useEditor({
     extensions: [
@@ -30,8 +31,11 @@ export const PostEditor = () => {
     }) ?? "";
 
   async function onSubmit() {
-    await createPost(input);
-    editor?.commands.clearContent();
+    mutation.mutate(input, {
+      onSuccess: () => {
+        editor?.commands.clearContent();
+      },
+    });
   }
 
   return (
@@ -45,7 +49,7 @@ export const PostEditor = () => {
       </div>
       <Button
         onClick={onSubmit}
-        disabled={!input.trim()}
+        disabled={!input.trim() || mutation.isPending}
         className="ml-auto w-20"
       >
         Post
